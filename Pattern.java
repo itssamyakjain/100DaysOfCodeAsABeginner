@@ -7,7 +7,7 @@ public class Pattern{
     // ask the user input for n
 		int n = sc.nextInt();
 		
-    // prints the pattern similar to pascal triangle but * in place of numbers
+    // prints the pattern similar to pascal triangle but prints star '*' in place of numbers
 		for(int i=1;i<=n;i++) {
 			for(int j=1;j<=2*n-1;j++) {
 				if(j>=n-i+1 && j<=n+i-1) {
