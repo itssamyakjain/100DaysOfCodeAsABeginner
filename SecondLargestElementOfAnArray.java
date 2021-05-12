@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class secondLargestElememtOfAnArray{
+public class SecondLargestElememtOfAnArray{
 	
 	static int secondLargestElement(int[] arr) {
 		// stores size of the array
