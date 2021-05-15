@@ -1,3 +1,6 @@
+/*
+*  Linear Search traverses the array sequentially to find whether an element is present in array or not
+*/
 import java.util.Scanner;
 
 public class LinearSearchInUnsortedArray{	
