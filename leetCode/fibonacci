@@ -1,0 +1,22 @@
+/*
+* Fibonacci Sequence consists of a term which is equal to the sum of two preceding terms of the sequence
+*/
+
+class Solution {
+// function that returns a fibonacci term
+    public int fib(int n) {
+        int temp1=0;
+        int temp2=1;
+        int result=0;
+        if(n==0)
+            return temp1;
+        if(n==1)
+            return temp2;
+        for(int i=2;i<=n;i++){
+            result=temp1+temp2;
+            temp1=temp2;
+            temp2=result;
+        }
+        return result;
+    }
+}
