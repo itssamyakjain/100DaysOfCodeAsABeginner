@@ -1,5 +1,6 @@
 /*
 * array consists of only 1's and 0's in sorted non-increasing manner
+* 
 */
 class Solution {
 // binary search is used to count the number of zeroes in the array
