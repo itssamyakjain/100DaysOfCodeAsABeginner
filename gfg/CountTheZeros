@@ -1,0 +1,24 @@
+/*
+* array consists of only 1's and 0's in sorted non-increasing manner
+*/
+class Solution {
+// binary search is used to count the number of zeroes in the array
+  int countZeroes(int[] arr, int n) {
+        int count=0;
+        int start=0;
+        int end=n-1;
+        while(start<=end){
+            int mid=(start+end)/2;
+            if(arr[mid]==1){
+                start=mid+1;
+            }
+            else if(arr[mid]==0){
+                end=mid-1;
+                if(arr[start]==0)
+                    return n-start;
+            }
+        }
+        return 0;
+    }
+
+}
