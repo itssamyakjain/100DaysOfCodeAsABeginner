@@ -22,7 +22,7 @@ public class LeftRotateAnArray{
 	
 	// rotates array one by one in each iteration till d!=0
 	// TC = O(n*d) and SC = O(1) 
- 	static int[] rotateArray(int[] arr, int d) {
+ 	static int[] leftRotate(int[] arr, int d) {
 		int n = arr.length;
 		while(d>0) {
 			int temp=arr[0];
