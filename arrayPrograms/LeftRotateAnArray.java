@@ -2,22 +2,37 @@ import java.util.Scanner;
 
 public class LeftRotateAnArray{	
 	
-	//this method left rotates(counter clockwise) the array by k
+	//the below method left rotates(counter clockwise) the array by k
 	// using a temp array which stores first k elements & shifts the rest
 	// by k and using temp to restore the k elements
-	static void leftRotate(int[] a, int k){
+	// TC = O(n) and SC = O(d)
+	static int[] leftRotate(int[] a, int k){
+		int n = a.length;
 		int[] temp = new int[k];
 		for(int i=0;i<k;i++)
 			temp[i]=a[i];
 		
-		for(int i=0;i<a.length-k;i++)
-			a[i]=a[i+k];
+		for(int i=k;i<n;i++)
+			a[i-d]=a[i];
 		
-		for(int i=a.length-k,j=0; i<a.length; i++,j++)
+		for(int i=n-k,j=0; i<n; i++,j++)
 			a[i]=temp[j];
-		
+		return a;
 	}
-		
+	
+	// rotates array one by one in each iteration till d!=0
+	// TC = O(n*d) and SC = O(1) 
+ 	static int[] rotateArray(int[] arr, int d) {
+		int n = arr.length;
+		while(d>0) {
+			int temp=arr[0];
+			for(int i=1;i<n;i++)
+				arr[i-1]=arr[i];
+			arr[n-1]=temp;
+			d--;
+		}
+		return arr;
+	}	
 	
 	public static void main(String[] args) {
 		
