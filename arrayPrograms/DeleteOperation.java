@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Algo {
+public class DeleteOperation {
 	
   // method deleted a particular element x in an array
 	static int deleteOperation(int[] a,int capacity, int x){
