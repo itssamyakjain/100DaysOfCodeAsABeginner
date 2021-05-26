@@ -2,20 +2,25 @@ import java.util.Scanner;
 
 public class DeleteOperation {
 	
-  // method deleted a particular element x in an array
+ 	 // method deleted a particular element x in an array
 	static int deleteOperation(int[] a,int capacity, int x){
 	
-    // if array is empty
-		if(a.length==0)
-			return a.length;
-		int index=0;
-		// finds the index of the element to be deleted
-		for(index=0;index<a.length;index++) {
-			if(a[index]==x)
-				break;
+   		int index=0;
+		// linear search to get the index of the element to be deleted	
+		for(int i=0;i<a.length;i++) {
+			if(a[i]==x) {
+			   index=i;
+			   break;
+			}
+			else
+			   index=-1;
 		}
 		
-    // shifts all the element beyond the x to the left by 1 
+		// if the element to be deleted is not found we return the current size of the array
+		if(index==-1)
+			return capacity;
+		
+   		 // shifts all the element beyond the x to the left by 1 
 		for(int i=index;i<capacity-1;i++) {
 			a[i]=a[i+1];
 		}
