@@ -10,11 +10,11 @@ import java.util.Scanner;
 public class Insertion{	
 	
 	// inserts the element if it's current capacity is less than the size of array 
-	static int[] insert(int[] a, int x, int pos, int currCapacity) {
+	static int insert(int[] a, int x, int pos, int currCapacity) {
 		
 		int n = a.length;
-		if(a.length == currCapacity)
-			return a;
+		if(a.length <= currCapacity)
+			return currCapacity;
 		
 		int index = pos-1;
 		for(int i=n-1; i>=index; i--) {
@@ -22,7 +22,7 @@ public class Insertion{
 		}
 		
 		a[index]=x;
-		return a;
+		return ++currCapacity;
 	}
 	
 	public static void main(String[] args) {
@@ -45,8 +45,8 @@ public class Insertion{
 		System.out.print("Input the position at which array element will be inserted : ");
 		int pos = sc.nextInt();
 	
-		arr = insert(arr,x,pos,currCapacity);
-		for(int i=0;i<n;i++)
+		currCapacity = insert(arr,x,pos,currCapacity);
+		for(int i=0;i<currCapacity;i++)
 			System.out.print(arr[i]+" ");
 		
 		sc.close();
