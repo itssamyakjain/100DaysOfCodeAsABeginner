@@ -5,10 +5,11 @@ public class ReverseAnArray{
 	// we swap the first element with the last one
 	// second with the second last one and so on  	 
 	static void reverseArray(int[] a){
-		for(int i=0,j=(a.length-1);i<a.length/2;i++,j--) {
-			int temp = a[i];
-			a[i]=a[j];
-			a[j]=temp;
+		int n = arr.length;
+		for(int i=0;i<n/2;i++) {
+			int temp = arr[i];
+			arr[i]=arr[n-i-1];
+			arr[n-i-1] = temp;
 		}
 		
 	}
