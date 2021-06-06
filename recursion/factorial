@@ -1,0 +1,15 @@
+// method to return factorial of a number using recursion
+static int fact(int n){
+  if(n<=0)
+    return 1; //base case
+  return n*fact(n-1);
+}
+
+
+// its a tail recursion it is faster than the above recursion method
+static int fact(int n , int val=1){
+  if(n<=0)
+    return val; //base case
+  return fact(n-1,n*val);
+}
+
