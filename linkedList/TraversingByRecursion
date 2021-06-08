@@ -1,0 +1,12 @@
+
+// recursive method for traversal
+// TC : O(n) and SC : O(n) , for n nodes n+1 times recursively function is called
+// so, iterative method is better
+
+public static void printList(Node n) {
+		 if(n==null)
+			return;
+		
+		System.out.print(n.key+" ");
+		printList(n.next);
+}
