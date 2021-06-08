@@ -1,0 +1,18 @@
+// recursive approach for searching element in a given linked list
+// TC : O(n) 
+// SC : O(n) , as recursive calls are made n+1 times in the worst scenario
+
+public static int search(Node n,int x) {
+
+		if(n==null)
+			return -1;
+		if(n.key==x)
+			return 1;
+		else {
+			int res = search(n.next,x);
+			if(res==-1)
+				return -1;
+			else
+				return res+1;
+		}
+}
