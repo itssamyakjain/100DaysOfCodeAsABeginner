@@ -1,0 +1,11 @@
+ // returns a new head node by deleting the previous head
+ // if head is null simply return null
+ // TC : O(1)
+ public static Node delete(Node head) {
+		
+		if(head == null)
+			return null;
+		
+		head=head.next;
+		return head;
+	}
