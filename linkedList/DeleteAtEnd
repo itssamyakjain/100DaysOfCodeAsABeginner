@@ -1,0 +1,23 @@
+// in java memory is deallocated automatically
+// method deletes the end node and returns the head node
+// TC : theta of n as the linked list is going to traverse whole list except the last node
+
+public static Node deleteAtEnd(Node head) {
+		
+    // if the linked list is empty
+		if(head==null)
+			return null;
+		// if there is only one node to delete
+    // if this case is not added then nullpointerexception is thrown
+		if(head.next == null)
+			return null;
+
+    // if number of nodes are greater than 1
+		Node curr = head;
+		
+		while(curr.next.next != null)
+			curr = curr.next;
+		
+		curr.next=null;
+		return head;
+}
