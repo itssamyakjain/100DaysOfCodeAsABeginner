@@ -1,0 +1,52 @@
+// Naive soultion 
+// requires two traversals
+	public static void middle(Node head) {
+		
+    // if linked list has no nodes print nothing
+    if(curr==null)   // corner case
+			return;
+		
+    int size=0;
+		Node curr = head;
+
+   // count the linked list size
+   // first traversal
+		while(curr!=null) {
+			size++;
+			curr=curr.next;
+		}
+		
+		curr=head;
+    // second traversal
+		for(int i=0;i<size/2;i++) {
+			curr=curr.next;
+		}
+		System.out.println(curr.key);
+	}
+
+
+
+
+// requires only one traversal
+// we maintain two references/pointers slow and fast 
+// slow moves one node at a time while fast moves two nodes at a time
+// so when fast reaches end slow reaches to the middle
+	public static void middle(Node head) {
+		
+    // counter case
+		if(head==null)
+			return;
+				
+		Node slow = head;
+		Node fast = head;
+		
+		while(fast!=null && fast.next!=null) {
+				slow = slow.next;
+				fast = fast.next.next;
+			}
+			System.out.println(slow.key);
+		
+	}
+
+
+
