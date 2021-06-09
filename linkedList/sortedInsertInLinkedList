@@ -1,0 +1,28 @@
+  // time complexity is theta of pos , where pos is the position the element is going to be inserted in linked list
+  // the linked list given is sorted
+  // insert x in linked list s.t linked list remain sorted
+	public static Node insert(Node head, int x) {
+		
+		Node temp = new Node(x);
+		
+		if(head==null)  // corner case
+			return temp;
+		
+		if(head.key>x) {    // corner case
+			temp.next=head;
+			return temp;
+		}
+		
+		Node curr = head;
+		while(curr.next!=null) {
+			
+			if(curr.next.key>x)
+				break;			
+			curr=curr.next;
+		}
+		
+		temp.next = curr.next;
+		curr.next = temp;
+		return head;		
+		
+	}
