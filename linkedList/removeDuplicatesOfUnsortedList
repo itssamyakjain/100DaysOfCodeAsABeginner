@@ -1,0 +1,28 @@
+//  TC : O(n^2)
+	public static void removeDuplicate(Node head) {
+		
+		if(head==null)
+			return;
+		
+    // take 3 references 
+		Node n= head;
+		Node temp = null, dup = null;
+		
+		while(n!=null && n.next!=null) {
+			temp=n;
+			
+			while(temp.next!=null) {
+				if(n.key==temp.next.key) {
+					dup=temp.next;
+					temp.next=temp.next.next;
+				}
+				else
+					temp=temp.next;	
+			}
+			n=n.next;
+		}		
+	}
+
+
+input : 10 12 11 11 12 11 10
+output : 10 12 11
