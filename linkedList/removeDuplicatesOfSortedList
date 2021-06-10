@@ -1,0 +1,13 @@
+// TC : O(n) and SC : O(1)
+public static void removeDuplicate(Node head) {
+		
+		Node temp = head;
+		
+		while(temp!=null && temp.next!=null) {
+			if(temp.key==temp.next.key)
+				temp.next= temp.next.next;
+			else
+				temp=temp.next;
+		}
+		
+	}
