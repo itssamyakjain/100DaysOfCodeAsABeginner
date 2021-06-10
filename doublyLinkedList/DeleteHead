@@ -1,0 +1,11 @@
+// deletes head in theta of 1
+public static Node delete(Node head) {
+		
+		if(head.next==null || head==null)
+			return null;
+		else {
+			head = head.next;
+			head.prev = null;
+			return head;
+		}
+}
