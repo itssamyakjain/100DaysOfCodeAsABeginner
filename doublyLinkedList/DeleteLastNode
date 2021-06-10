@@ -1,0 +1,13 @@
+// TC is theta of n for n nodes
+// TC becomes constant if we have another pointer tail passed as argument pointing to the last node
+public static Node delete(Node head) {
+		
+		if(head==null || head.next==null)
+			return null;
+		
+		Node curr = head;
+		while(curr.next!=null)
+			curr=curr.next;
+		curr.prev.next=null;   // we get hold of the previous then we change its next to null
+		return head;
+}
