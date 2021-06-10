@@ -1,0 +1,33 @@
+// insertion at any given position in doubly linked list
+public static Node insert(Node head, int pos,int x) {
+  	Node n = new Node(x);
+		
+		if(head==null) // corner case
+			return n;
+		
+		if(pos==1) {      // corner case
+			n.next=head;
+			head.prev=n;
+			return n;
+		}
+			
+		
+		Node curr = head;
+		while(pos-->2) 
+			curr=curr.next;
+		
+		if(curr==null)      // if given position is invalid
+			return head;
+		
+		n.next=curr.next;
+		n.prev=curr;
+		if(curr.next==null)
+			curr.next=n;
+		else {
+			curr.next.prev = n;
+			curr.next=n;
+		}
+		return head;
+		
+	}
+
