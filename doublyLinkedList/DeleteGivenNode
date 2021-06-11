@@ -1,0 +1,28 @@
+// x is the key to be searched then that node containing the key should be deleted
+public static Node delete(Node head, int x) {
+		
+		Node curr = head;
+		
+		if(head.key==x) {
+			head=head.next;
+			return head;
+		}
+		
+		while(curr!=null) {
+			if(curr.key==x)
+				break;
+			curr=curr.next;
+		}
+		
+		if(curr==null)
+			return head;
+		
+		if(curr.next==null && curr.key==x) {
+			curr.prev.next=null;
+			return head;
+		}
+		
+		curr.prev.next=curr.next;
+		curr.next.prev = curr.prev;
+		return head;		
+}
