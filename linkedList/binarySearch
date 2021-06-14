@@ -1,0 +1,90 @@
+// find its time complexity
+// similar to binary search in array  
+// method 1
+public static void binarySearch(Node head,int x) {
+		
+		Node curr =head;
+		int length=0;
+		
+		while(curr!=null) {
+			curr=curr.next;
+			length++;
+		}
+		
+		int start=0;
+		int end = length-1;
+		boolean flag = false;
+		
+		while(start<=end) {
+			int mid=(start+end)/2;
+			
+			int temp=mid;
+			curr = head;
+			while(temp-->0)
+				curr=curr.next;
+			if(curr.key==x) {
+				flag=true;
+				break;
+			}
+			else if(x<curr.key)
+				end=mid-1;
+			else
+	   			start=mid+1;
+			
+		}
+		System.out.println();
+		if(flag==true)
+			System.out.println("found");
+		else
+			System.out.println("not found");
+	}
+  
+  
+// method 2
+// TC : O(n)
+// first find the middle node then start binary search 
+  
+  public static Node middle(Node start, Node last) {
+		
+		if(start==null)
+			return null;
+		
+		Node slow = start;
+		Node fast = last.next;
+				
+		while(fast!=null) {
+			fast=fast.next;
+			if(fast!=null) {
+				fast=fast.next;
+				slow=slow.next;
+			}
+		}
+		return slow;
+	}
+	
+public static Node binarySearch(Node head,int x) {
+		
+		Node start = head;
+		Node last = null;
+		
+		do {
+			//find middle
+			Node mid = middle(start,last);
+			
+			if(mid==null)
+				return null;
+			
+			if(mid.key==x)
+				return mid;
+			
+			else if(mid.key<x) 
+				start=mid.next;
+			
+			else
+				last=mid;
+			}while(last==null || last!=start);
+		
+		// if value not present
+		return null;
+	}
+
