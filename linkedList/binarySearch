@@ -41,7 +41,7 @@ public static void binarySearch(Node head,int x) {
   
   
 // method 2
-// TC : O(n)
+// TC : O(n) as it takes linear time to find middle element
 // first find the middle node then start binary search 
   
   public static Node middle(Node start, Node last) {
