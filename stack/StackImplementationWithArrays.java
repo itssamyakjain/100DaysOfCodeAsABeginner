@@ -9,12 +9,19 @@ class Stack{
 	//it will become 0 with 1st element of stack 
 	// basically top points to the topmost element of stack
 	Stack(){
-    top=-1;
-  }
-  
+   		 top=-1;
+  	}
+  	
+	boolean isEmpty(){
+		if(top<0)
+			return true;
+		else
+			return false;
+	}
+	
 	// returns the top element of the stack
 	int peek() {
-		if(top<0) {
+		if(isEmpty()) {
 			System.out.println("StackUnderflow");
 			return 0;
 		}
@@ -36,7 +43,7 @@ class Stack{
 	
 	// removes the top element from the stack 
 	int pop() {
-		if(top<0) {
+		if(isEmpty()) {
 			System.out.println("StackUnderflow");
 			return 0;
 		}
