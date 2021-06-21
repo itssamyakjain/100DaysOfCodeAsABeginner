@@ -14,11 +14,11 @@ class Node{
 public class PreorderRecursiveTraversal {
   
   // PREORDER TRAVERSAL
-	public static void inorder(Node root) {
+	public static void preorder(Node root) {
 		if(root!=null) {
       System.out.print(root.key+" ");
-      inorder(root.left);
-      inorder(root.right);
+      preorder(root.left);
+      preorder(root.right);
     }
 	}	
   
@@ -30,7 +30,7 @@ public class PreorderRecursiveTraversal {
 	  	root.left.right = new Node(30);
 	  	root.right.left = new Node(27);
 		  root.right.right = new Node(31);
-		  inorder(root);      // OUTPUT PREORDER TRAVERSAL (ROOT LEFT RIGHT) :  10 15 25 30 20 27 31
+		  preorder(root);      // OUTPUT PREORDER TRAVERSAL (ROOT LEFT RIGHT) :  10 15 25 30 20 27 31
 	}
 
 }
