@@ -1,0 +1,7 @@
+//  compare maximum of both left and right subtrees then finally compare it with the root's key
+public static int getMax(Node root) {
+		if(root==null) 
+			return Integer.MIN_VALUE;
+		else
+			return Math.max(root.key, (Math.max(getMax(root.left), getMax(root.right))));
+}
