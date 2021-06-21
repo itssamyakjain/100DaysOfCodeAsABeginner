@@ -14,10 +14,10 @@ class Node{
 public class PostorderRecursiveTraversal {
 
   // POSTORDER TRAVERSAL
-	public static void inorder(Node root) {
+	public static void postorder(Node root) {
 		if(root!=null) {
-      inorder(root.left);
-      inorder(root.right);
+      postorder(root.left);
+      postorder(root.right);
       System.out.print(root.key+" ");
     }
 	}	
@@ -30,7 +30,7 @@ public class PostorderRecursiveTraversal {
 	  	root.left.right = new Node(30);
 	  	root.right.left = new Node(27);
 		  root.right.right = new Node(31);
-		  inorder(root);      // OUTPUT POSTORDER TRAVERSAL (LEFT RIGHT ROOT) :  25 30 15 27 31 20 10 
+		  postorder(root);      // OUTPUT POSTORDER TRAVERSAL (LEFT RIGHT ROOT) :  25 30 15 27 31 20 10 
 	}
 
 }
