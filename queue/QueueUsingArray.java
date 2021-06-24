@@ -21,17 +21,17 @@ class Queue{
 	// returns te index of front element
 	int getFront() {
 		if(isEmpty())
-			return -1;
+			return Integer.MIN_VALUE;
 		else
-			return 0;
+			return this.arr[0];
 	}
 	
 	// returns the index of rear element
 	int getRear() {
 		if(isEmpty())
-			return -1;
+			return Integer.MIN_VALUE;
 		else
-			return size-1;
+			return arr[size-1];
 	}
 
 	boolean isEmpty() {
@@ -89,8 +89,8 @@ public class QueueUsingArray {
 		q.dequeue();
 			 
 		System.out.println(q.size());					      // 4
-		System.out.println(q.arr[q.getFront()]);		// 22
-		System.out.println(q.arr[q.getRear()]);			// 55
+		System.out.println(q.getFront());		// 22
+		System.out.println(q.getRear());			// 55
 		q.printQueue();									            // 22 33 44 55
 	}
 
