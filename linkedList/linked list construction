@@ -1,3 +1,48 @@
+class Node{
+	int key;
+	Node next;
+	
+	
+	Node(int key){
+		this.key=key;
+	}
+}
+
+public class LinkedList{
+
+	static Node head = null;
+	
+	// inserts element at the beginning of the list
+	public static void push(int x) {
+		Node n = new Node(x);
+		
+		n.next=head;
+		head=n;
+	}
+	
+	public static void printList(Node head) {
+		for(Node temp = head; temp!=null;temp=temp.next)
+			System.out.print(temp.key+" ");
+		System.out.println();
+	}	
+	
+	public static void main(String[] args) {
+		
+		push(55);
+		push(44);
+		push(33);
+		push(22);
+		push(11);
+		
+		printList(head);	// 11 22 33 44 55
+		
+	}
+}
+	
+
+		OR
+
+
 public class LinkedList{
 	
 	LinkedList(){
