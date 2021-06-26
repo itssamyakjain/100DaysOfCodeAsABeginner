@@ -10,6 +10,7 @@ class Node{
 
 public class List {	
 	
+	//method 1 
 	public static Node reverseList(Node head) {
 		
 		Node curr = head;
@@ -29,6 +30,27 @@ public class List {
 		return prev;
 		
 	}
+	
+	// method 2 : reverse a linked list using stack with TC : O(n) and SC : O(n)
+	public static Node reverse(Node head) {
+		
+		Stack<Node> st = new Stack<Node>();
+		
+		Node temp = head;
+		while(temp.next!=null) {
+			st.push(temp);
+			temp=temp.next;
+		}
+		
+		head=temp;
+		while(!st.isEmpty()) {
+			temp.next=st.pop();
+			temp=temp.next;
+		}
+		temp.next=null;
+		return head;
+	}
+
 	
 	public static void printList(Node n) {
 	
