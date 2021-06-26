@@ -1,0 +1,26 @@
+// method 1 : using stacks , push the key values to stack traversing from head to the end 
+// start traversing from head again and overwrite the key values in reverse order without 
+// changing next and previous , TC : O(n) and SC : O(n)
+	
+public static Node reverseList(Node head) {
+		
+		Stack<Integer> st = new Stack<Integer>();
+		
+		Node temp=head;
+		while(temp!=null) {
+			st.push(temp.key);
+			temp=temp.next;
+		}
+		
+		temp=head;
+		while(temp!=null) {
+			temp.key=st.peek();
+			st.pop();
+			temp=temp.next;
+		}
+		return head;
+}
+
+
+// method 2 : reverses in a single traversal without taking any extra space
+// we swap the next and prev of every node and return last node as new head
