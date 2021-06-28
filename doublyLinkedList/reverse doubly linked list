@@ -24,3 +24,21 @@ public static Node reverseList(Node head) {
 
 // method 2 : reverses in a single traversal without taking any extra space
 // we swap the next and prev of every node and return last node as new head
+// or use 3 pointers similar to what we did in reversing singly ll
+public static Node reverse(Node head) {
+	while(head!=null) {
+			
+		Node next = head.next;
+
+		head.next = head.prev;
+		head.prev = next;
+			
+		if(head.prev==null)
+		break;
+			
+		head=head.prev;
+				
+	}
+	return head;
+}
+	
