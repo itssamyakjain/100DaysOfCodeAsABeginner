@@ -32,7 +32,8 @@ public static Node reverse(Node head) {
 
 		head.next = head.prev;
 		head.prev = next;
-			
+		
+		// before head becomes null we must break the loop
 		if(head.prev==null)
 		break;
 			
@@ -42,3 +43,5 @@ public static Node reverse(Node head) {
 	return head;
 }
 	
+method 3 : just like reversing an array , reverse the data values of doubly ll in n/2 traversal.
+Reversing becomes costly if the size of data is more as compared to nodes swapping in method 2.
