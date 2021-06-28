@@ -31,6 +31,18 @@ public class List {
 		
 	}
 	
+	// method-3 : similarl to method 1 we can reverse the ll recursively
+	// passing the head node as curr & prev as null initially and returning 
+	// prev(last node) as head lastly after the function calls ends
+	public static Node reverse(Node curr,Node prev) {
+		if(curr==null)
+			return prev;
+		
+		Node next = curr.next;
+		curr.next = prev;
+		return reverse(next,curr);
+	}
+	
 	// method 2 : reverse a linked list using stack with TC : O(n) and SC : O(n)
 	public static Node reverse(Node head) {
 		
