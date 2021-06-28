@@ -49,4 +49,4 @@
 	}
 
 
-
+// method 3 : we can also use array of nodes to store nodes and then return the middle array node
