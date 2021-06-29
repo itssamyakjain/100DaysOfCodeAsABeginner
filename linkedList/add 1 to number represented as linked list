@@ -1,0 +1,45 @@
+// method : 1
+// firstly reverse the list then add 1 to it
+// if the number stored is like 99,999,9999 then create a newNode 
+// the modified linked list will have one extra node then again
+// atlast reverse the list and return the new head
+// TC : O(n) with constant space
+public static Node addOne(Node head) {
+		
+		head = reverse(head);
+		
+		Node res = head;
+		Node temp=null;
+		int carry=1,sum;
+		
+		while(res!=null) {
+			sum = carry+res.key;
+			
+			if(sum>=10)
+				carry=1;
+			else
+				carry=0;
+			
+			sum=sum%10;
+			
+			res.key=sum;
+			
+			temp=res;
+			res=res.next;			
+		}
+		
+    // if the carry is still 1 then add a newNode with 1 as key
+		if(carry>0) {
+			temp.next=newNode(carry);
+		}
+		
+		head=reverse(head);
+		return head;
+		
+	}
+  
+  public static Node newNode(int x){
+    Node n = new Node(x);
+    n.next=null;
+    return n;  
+  }
