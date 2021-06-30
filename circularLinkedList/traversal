@@ -1,0 +1,12 @@
+// node.next points to head after the iteration
+public static void printList(Node head) {
+		if(head==null)
+			return;
+		Node node =head;
+		do {
+			System.out.print(node.key+" ");
+			node=node.next;
+		}while(node!=head);
+}
+
+// TC : O(n)
