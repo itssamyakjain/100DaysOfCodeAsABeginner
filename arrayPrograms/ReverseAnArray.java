@@ -14,6 +14,21 @@ public class ReverseAnArray{
 		
 	}
 	
+	//method-2 :  reverse a part of array with the given start and end indices
+	public static int[] reverse(int[] arr,int start,int end) {
+		
+		
+		while(start<end) {
+			int temp=arr[start];
+			arr[start]=arr[end];
+			arr[end]=temp;
+			start++;
+			end--;
+		}
+		return  arr;
+	}
+
+	
 	public static void main(String[] args) {
 		
 		Scanner sc = new Scanner(System.in);
