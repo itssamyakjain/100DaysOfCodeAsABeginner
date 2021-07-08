@@ -1,0 +1,21 @@
+// we repeatedly find the minimum element from the unsorted part and put it at the beginning
+// like the first array element is the minimum element, 2nd array element is the 2nd smallest minimum element and so on
+// TC = O(n^2) 
+public static void selectionSort(int[] arr) {
+		
+		int n=arr.length;
+		
+		for(int i=0;i<n;i++) {
+			int min_index=i;
+      // finds minimum element
+			for(int j=i+1;j<n;j++) {
+				if(arr[j]<arr[min_index])
+					min_index=j;
+			}
+  
+      // swap the found min element with the first element of subarray
+      int temp = arr[i];
+			arr[i]=arr[min_index];
+			arr[min_index]=temp;
+		}
+ }
