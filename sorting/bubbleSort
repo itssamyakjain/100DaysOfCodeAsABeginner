@@ -1,0 +1,22 @@
+//
+public void bubbleSort(int[] arr){
+
+    int n = arr.length;
+		boolean swap = true;
+		
+    // swap variable is introduced to make the solution more optimal i.e., we stop the algorithm if the inner loop does not cause any swap
+		for(int i=0;i<n-1;i++) {
+			swap=false;
+			for(int j=0;j<n-i-1;j++) {        // j<n-i-1, because in the 1st iteration maximum element becomes last element, in 2nd iteration 2nd largest element becomed 2nd last and so on
+        if(arr[j]>arr[j+1]) {
+					int temp=arr[j];
+					arr[j]=arr[j+1];
+					arr[j+1]=temp;
+					swap=true;
+				}
+			}
+			
+			if(swap==false)
+				break;
+		}
+}
