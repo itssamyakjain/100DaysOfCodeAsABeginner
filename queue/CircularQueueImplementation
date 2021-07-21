@@ -1,0 +1,78 @@
+
+// implementation of queue(or circular queue) using circular linked list 
+public class LinkedList {
+		
+	static class Node{
+		int key;
+		Node next;
+		
+		Node(int key){
+			this.key=key;
+		}
+	}
+	
+	static class Queue{
+		Node rear,front;
+	}
+	
+	static void enqueue(Queue q,int x) {
+		
+		Node n = new Node(x);
+		
+		if(q.front==null)
+			q.front=n;
+
+		else {
+			q.rear.next=n;
+		}
+		q.rear=n;
+		q.rear.next=q.front;		
+	}
+	
+	static int dequeue(Queue q) {
+		
+		if(q.front==null)
+			return Integer.MIN_VALUE;
+		
+		int value;	//value to be dequeued
+		if(q.front==q.rear) {
+			value=q.front.key;
+			q.front=q.rear=null;
+		}
+		else {
+			Node temp = q.front;
+			value=q.front.key;
+			q.front=q.front.next;
+			q.rear.next=q.front;
+		}
+		
+		return value;
+		
+	}
+	
+	static void printQueue(Queue q) {
+		
+		Node temp = q.front;
+		
+		do {
+			System.out.print(temp.key+" ");
+			temp=temp.next;
+		}while(temp!=q.front);
+	}
+		
+	public static void main(String[] args) {
+				
+		Queue q = new Queue();
+		
+		enqueue(q,4);
+		enqueue(q,5);
+		enqueue(q,6);
+		enqueue(q,7);
+		enqueue(q,8);
+		dequeue(q);
+		dequeue(q);
+		printQueue(q);	// 6 7 8
+		
+	}
+
+}
